@@ -1,0 +1,16 @@
+Designing Resful api
+in which json 
+
+GET/api/user - get all the user
+
+GET/api/user/1 - get the user with ID 1
+GET/api/user/2 - get the user with ID 2
+
+Dynamic path parameter
+api/users/:id
+
+POST/api/user - create a new user
+
+pATCH/api/user/id -edit the user with ID
+
+DELETE/api/user/1 - delete the user with ID 1
