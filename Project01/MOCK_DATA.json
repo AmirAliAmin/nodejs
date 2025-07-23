@@ -7998,5 +7998,21 @@
     "email": "cleamyrr@reddit.com",
     "gender": "Female",
     "job_title": "Director of Sales"
+  },
+  {
+    "first_name": "Amir Ali",
+    "last_name": "Amin",
+    "email": "ayz@gmail.com",
+    "gender": "Male",
+    "job_title": "Software Engineer",
+    "id": 1001
+  },
+  {
+    "first_name": "Waleed",
+    "last_name": "Nisar",
+    "email": "abc@gmail.com",
+    "gender": "Male",
+    "job_title": "Software Engineer",
+    "id": 1002
   }
 ]
