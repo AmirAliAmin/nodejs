@@ -1,0 +1,6 @@
+//How mongo work
+
+//we have a Schema, In which you define the structure
+// use this Scheme
+    we create a   - Model
+Using this Model is do CRUD operations
