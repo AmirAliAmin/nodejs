@@ -13,10 +13,19 @@ async function handleGenerateNewURL(req,res) {
         visitHistory:[]
 
     });
+    return res.render("home", {
+        id: ShortId
+    })
+}
 
-    return  res.json({id: ShortId})
+async function handleGetAnalytics(req, res) {
+    const shortId = req.params.shortId;
+    const result = await URL.findOne({ shortId})
+    return res.json({totalClick :result.visitHistory.length, analytic:result.visitHistory})
+    
 }
 
 module.exports = {
-    handleGenerateNewURL
+    handleGenerateNewURL,
+    handleGetAnalytics
 }
