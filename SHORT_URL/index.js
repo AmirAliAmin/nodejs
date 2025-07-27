@@ -4,7 +4,8 @@ const path = require("path")
 const { ConnectToMongoos } = require("./connection")
 const cookieParser = require("cookie-parser")
 
-const {restrictTologgedUserOnly} = require("./middleware/auth")
+// const {restrictTologgedUserOnly} = require("./middleware/auth")
+const { CheckForAuthentication,retrictTo} = require("./middleware/auth")
 const URL = require('./models/url');
 const staticRouter = require("./routes/staticRouter")
 const userRouter = require("./routes/user")
@@ -23,10 +24,12 @@ app.set("views", path.resolve("./views"))
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(cookieParser());
+app.use(CheckForAuthentication)
 
-app.use("/url",restrictTologgedUserOnly, UrlRoutes)
+app.use("/url",retrictTo("NORMAL","ADMIN"), UrlRoutes)
 app.use("/", staticRouter)
 app.use("/user", userRouter)
+
 
 // app.get("/url/test",async(req,res)=>{
 //     const allurls = await URL.find();
