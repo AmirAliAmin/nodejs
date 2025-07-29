@@ -10,8 +10,11 @@ function checkForAuthCookie(cookieName) {
       const userPayload = validateToken(tokenCookieValue);
       req.user = userPayload;
     //   next();
-    } catch (error) {}
-    next();
+    } catch (error) {
+      console.error("Invalid token:", error.message); // Helps debugging
+      req.user = null;
+    }
+    return next();
   };
 }
 
